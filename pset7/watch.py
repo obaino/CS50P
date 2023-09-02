@@ -13,6 +13,5 @@ def parse(s):
         short_url = re.search(r"embed/(.+)$", long_url).group(1)
         return f"https://youtu.be/{short_url}"
 
-
 if __name__ == "__main__":
     main()
