@@ -1,5 +1,5 @@
 # CS50P
-Problem Set Solutions for CS50’s [Introduction to Programming with Python](https://cs50.harvard.edu/python/2022).
+Problem Set Solutions for [CS50 Introduction to Programming with Python](https://cs50.harvard.edu/python/2022).
 
 
 ---
