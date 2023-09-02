@@ -10,10 +10,10 @@ def main():
 
 
 def parse(s):
-    regex = r"(http[s]?://www.youtube.com/embed/\w+)\""
+    regex = r"src\=\"(http[s]?://www.youtube.com/embed/.+?)\""
     url_pattern = re.search(regex, s)
     if url_pattern:
-        return f"Starts at {url_pattern.start()} ends at {url_pattern.end()}, {url_pattern.group(1)}"
+        return url_pattern.group(1)
     else:
         return f"Cannot spot it"
 
