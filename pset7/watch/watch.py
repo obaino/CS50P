@@ -14,8 +14,6 @@ def parse(s):
     url_pattern = re.search(regex, s)
     if url_pattern:
         return url_pattern.group(1)
-    else:
-        return f"Cannot spot it"
 
 
 
