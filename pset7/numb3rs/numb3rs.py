@@ -10,7 +10,6 @@ def validate(ip):
     match = re.search(regex, ip)
     if match:
         for n in match.groups():
-            # print(n)
             if int(n) <= 255:
                 continue
             else:
