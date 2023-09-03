@@ -3,11 +3,14 @@
 import re, sys
 
 def main():
+    print(standard(input("Hours: ")))
     # print(convert(input("Hours: ")))
-    times = ["2:00 AM", "8 AM", "9:00 AM", "10:00 AM", "4:00 PM", "1 PM", "10 PM", "11:00 PM"]
-    for time in times:
-        print(f"input time is: {time}, standard time is: {standard(time)}")
-        print("----" * 12)
+
+    # test standard function
+    # times = ["2:00 AM", "8 AM", "9:00 AM", "10:00 AM", "4:00 PM", "1 PM", "10 PM", "11:00 PM"]
+    # for time in times:
+    #     print(f"input time is: {time}, standard time is: {standard(time)}")
+    #     print("----" * 12)
 
 
 # def convert(s):
