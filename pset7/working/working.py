@@ -3,7 +3,7 @@
 import re, sys
 
 def main():
-    print(convert(input("Hours: ")))
+    # print(convert(input("Hours: ")))
 
 
 def convert(s):

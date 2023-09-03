@@ -7,8 +7,7 @@ def main():
 
 def validate(ip):
     regex = r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$"
-    match = re.search(regex, ip)
-    if match:
+    if match := re.search(regex, ip):
         for n in match.groups():
             if int(n) <= 255:
                 continue
