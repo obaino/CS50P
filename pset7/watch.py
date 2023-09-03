@@ -1,6 +1,6 @@
 # https://cs50.harvard.edu/python/2022/psets/7/watch/
 
-import re, sys
+import re
 
 def main():
     print(parse(input("HTML: ")))
