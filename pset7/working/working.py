@@ -3,14 +3,11 @@
 import re, sys
 
 def main():
-    # print(convert(input("Hours: ")))
-
-    # test standard function
-    times = ["4 AM", "2:34 AM", "8 AM", "9:12 AM", "10:00 AM", "4:00 PM", "1 PM", "10 PM", "11:00 PM", "17:00 PM", "26:35 AM", "11:23 AM"]
-    for time in times:
-        print(f"input time is: {time}, 24hr time is: {convert(time)}")
-        print("----" * 11)
-
+    try:
+        hour1, hour2 = input(("Hours: ")).split(" to ")
+        print(f"{convert(hour1)} to {convert(hour2)}")
+    except ValueError:
+        exit()
 
 def convert(s):
     regex = r"^(0?[1-9]|1[0-2])(?::([0-5][0-9]))? (AM|PM)$"
