@@ -3,18 +3,28 @@
 import re, sys
 
 def main():
-    print(standard(input("Hours: ")))
     # print(convert(input("Hours: ")))
 
     # test standard function
-    # times = ["2:00 AM", "8 AM", "9:00 AM", "10:00 AM", "4:00 PM", "1 PM", "10 PM", "11:00 PM"]
-    # for time in times:
-    #     print(f"input time is: {time}, standard time is: {standard(time)}")
-    #     print("----" * 12)
+    times = ["4 AM", "2:34 AM", "8 AM", "9:12 AM", "10:00 AM", "4:00 PM", "1 PM", "10 PM", "11:00 PM", "17:00 PM", "26:35 AM", "11:23 AM"]
+    for time in times:
+        print(f"input time is: {time}, 24hr time is: {convert(time)}")
+        print("----" * 11)
 
 
-# def convert(s):
-    
+def convert(s):
+    regex = r"^(0?[1-9]|1[0-2])(?::([0-5][0-9]))? (AM|PM)$"
+    try:
+        if time := re.search(regex, s):
+            if time.group(2) == None: # time format is: hh AM/PM
+                new_time = f"{time.group(1)}:00 {time.group(3)}"
+            else: # time format is: hh:mm AM/PM
+                new_time = f"{time.group(1)}:{time.group(2)} {time.group(3)}"
+            return standard(new_time)
+        else:
+            raise ValueError
+    except ValueError:
+        exit()
 
 def standard(time):
     output_time = ""
