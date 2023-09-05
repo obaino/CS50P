@@ -5,23 +5,6 @@ import re
 def main():
     print(convert(input("Hours: ")))
 
-    # testing_hours = [
-    #     "9 AM to 5 PM",
-    #     "9:00 AM to 5:00 PM",
-    #     "10 PM to 8 AM",
-    #     "10:30 PM to 8:50 AM",
-    #     "12:13 AM to 4 PM",
-    #     "3 AM to 4:23 PM",
-    #     "12:05 PM to 8:30 PM",
-    #     "12:20 AM to 3:30 PM",
-    #     "12:20 AM - 3:30 PM"
-    #     ]
-
-    # for testing_hour in testing_hours:
-    #     print(testing_hour)
-    #     print(convert(testing_hour))
-    #     print("---" * 14)
-
 def convert(s):
     regex = r"^(?P<hours1>0?[1-9]|1[0-2])(?::(?P<minutes1>[0-5][0-9]))? (?P<ap_1>AM|PM) to (?P<hours2>0?[1-9]|1[0-2])(?::(?P<minutes2>[0-5][0-9]))? (?P<ap_2>AM|PM)$"
     if time := re.search(regex, s, flags=re.IGNORECASE):
