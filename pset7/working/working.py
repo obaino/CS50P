@@ -1,6 +1,6 @@
 # https://cs50.harvard.edu/python/2022/psets/7/working/
 
-import re, sys
+import re
 
 def main():
     print(convert(input("Hours: ")))
