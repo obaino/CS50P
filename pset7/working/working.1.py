@@ -1,4 +1,6 @@
 # https://cs50.harvard.edu/python/2022/psets/7/working/
+# Converts time from 12h to 24h format using a dedicated
+# standard function
 
 import re, sys
 
