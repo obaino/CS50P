@@ -4,6 +4,7 @@
 
 import re, sys
 
+
 def main():
     try:
         hour1, hour2 = input(("Hours: ")).split(" to ")
@@ -11,19 +12,21 @@ def main():
     except ValueError:
         exit()
 
+
 def convert(s):
     regex = r"^(0?[1-9]|1[0-2])(?::([0-5][0-9]))? (AM|PM)$"
     try:
         if time := re.search(regex, s):
-            if time.group(2) == None: # time format is: hh AM/PM
+            if time.group(2) == None:  # time format is: hh AM/PM
                 new_time = f"{time.group(1)}:00 {time.group(3)}"
-            else: # time format is: hh:mm AM/PM
+            else:  # time format is: hh:mm AM/PM
                 new_time = f"{time.group(1)}:{time.group(2)} {time.group(3)}"
             return standard(new_time)
         else:
             raise ValueError
     except ValueError:
         exit()
+
 
 def standard(time):
     output_time = ""

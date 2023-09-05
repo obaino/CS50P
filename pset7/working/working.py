@@ -2,8 +2,10 @@
 
 import re
 
+
 def main():
     print(convert(input("Hours: ")))
+
 
 def convert(s):
     regex = r"^(?P<hours1>0?[1-9]|1[0-2])(?::(?P<minutes1>[0-5][0-9]))? (?P<ap_1>AM|PM) to (?P<hours2>0?[1-9]|1[0-2])(?::(?P<minutes2>[0-5][0-9]))? (?P<ap_2>AM|PM)$"
@@ -12,6 +14,7 @@ def convert(s):
         return f"{standard_time(hours1, minutes1, ap_1)} to {standard_time(hours2, minutes2, ap_2)}"
     else:
         raise ValueError
+
 
 def standard_time(hours, minutes, ap):
     if minutes == None:
@@ -27,6 +30,7 @@ def standard_time(hours, minutes, ap):
         else:
             hours = int(hours)
     return f"{hours:02}:{minutes}"
+
 
 if __name__ == "__main__":
     main()

@@ -2,9 +2,11 @@
 
 import validators
 
+
 def main():
     email = input("What's your email address? ")
     print(validate(email))
+
 
 def validate(text):
     if validators.email(text):

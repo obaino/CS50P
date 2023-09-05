@@ -4,12 +4,14 @@
 
 import re, sys
 
+
 def main():
     try:
         hour1, hour2 = input(("Hours: ")).split(" to ")
         print(f"{convert(hour1)} to {convert(hour2)}")
     except ValueError:
         exit()
+
 
 def convert(s):
     regex = r"^(0?[1-9]|1[0-2])(?::([0-5][0-9]))? (AM|PM)$"
@@ -34,6 +36,7 @@ def convert(s):
             raise ValueError
     except ValueError:
         exit()
+
 
 if __name__ == "__main__":
     main()
