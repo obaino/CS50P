@@ -1,27 +1,26 @@
 # https://cs50.harvard.edu/python/2022/psets/8/seasons/
 
-import re, inflect
-from datetime import datetime, date
+import inflect, sys
+from datetime import date
 
 
 def main():
     p = inflect.engine()
-    output = p.number_to_words(time_difference(get_birthday()), andword="")
+    output = p.number_to_words(find_minutes(get_dob()), andword="")
     print(f"{output} minutes")
 
 
-def get_birthday():
-    regex = r"\b(\d{4})-(\d{1,2})-(\d{1,2})\b"
-    user_bd = input("Date of birth: ")
-    if match := re.match(regex, user_bd):
-        year, month, day = map(int, match.groups())
-        birthday = date(year, month, day)
+def get_dob():
+    # create a list of integers from the "-" splitted date
+    dob = list(map(int, input("Date of birth: ").split("-")))
+    if not dob:
+        exit("bye")
     else:
-        exit("Invalid Date")
-    return birthday
+        # return an instanciated date object
+        return date(dob[0], dob[1], dob[2])
 
 
-def time_difference(birthday):
+def find_minutes(birthday):
     today = date.today()
     timedelta = today - birthday
     return round(timedelta.total_seconds() / 60)
