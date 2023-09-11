@@ -15,14 +15,14 @@ def get_birthday():
     user_bd = input("Date of birth: ")
     if match := re.match(regex, user_bd):
         year, month, day = map(int, match.groups())
-        birthday = datetime(year, month, day)
+        birthday = date(year, month, day)
     else:
         exit("Invalid Date")
     return birthday
 
 
 def time_difference(birthday):
-    today = datetime.combine(date.today(), datetime.min.time())
+    today = date.today()
     timedelta = today - birthday
     return round(timedelta.total_seconds() / 60)
 
