@@ -14,6 +14,7 @@ def get_dob():
     # create a list of integers from the "-" splitted date
     dob = list(map(int, input("Date of birth: ").split("-")))
     if not dob:
+        raise ValueError
         exit("bye")
     else:
         # return an instanciated date object
