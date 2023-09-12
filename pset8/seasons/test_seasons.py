@@ -1,5 +1,5 @@
 import pytest
-from seasons import get_birthday, time_difference
+from seasons import get_dob, find_minutes
 
 def test_birthday():
-    assert time_difference
+    assert get_dob("1972-02-27") == "1972-02-27"
