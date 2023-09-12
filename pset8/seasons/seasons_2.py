@@ -1,7 +1,7 @@
 # https://cs50.harvard.edu/python/2022/psets/8/seasons/
 
 import re, inflect
-from datetime import datetime, date
+from datetime import date
 
 
 def main():
