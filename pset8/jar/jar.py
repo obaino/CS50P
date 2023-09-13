@@ -29,19 +29,22 @@ class Jar:
     # Getter for capacity
     @property
     def capacity(self):
-        print(f"getter capacity: {self._capacity} was accessed")
+        # print(f"getter capacity: {self.capacity} was accessed")
         return self._capacity
 
     # Setter for capacity
     @capacity.setter
     def capacity(self, capacity):
         # print(f"setter for capacity: {self.capacity} value is now: {capacity}")
-        self._capacity = capacity
+        if capacity > 0:
+            self._capacity = capacity
+        else:
+            raise ValueError
 
     # Getter for size
     @property
     def size(self):
-        print(f"getter size {self._size} was accessed")
+        # print(f"getter size {self._size} was accessed")
         return self._size
 
     # Setter for size
@@ -52,6 +55,7 @@ class Jar:
 
 
 def main():
+    # cookies = Jar(-1)
     cookies = Jar(12)
     cookies.deposit(8)
     cookies.withdraw(4)
