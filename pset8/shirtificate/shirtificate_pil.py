@@ -1,4 +1,5 @@
 # https://cs50.harvard.edu/python/2022/psets/8/shirtificate/
+# implemented using pillow module
 
 from fpdf import FPDF, Align
 from PIL import Image, ImageFont, ImageDraw
